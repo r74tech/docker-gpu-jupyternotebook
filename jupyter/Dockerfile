@@ -1,11 +1,12 @@
-FROM nvidia/cuda:11.3.0-devel-ubuntu20.04
+FROM nvidia/cuda:11.3.0-cudnn8-devel-ubuntu20.04
 
-RUN apt-get update
-RUN apt-get install -y python3 python3-pip
+RUN apt update
+RUN apt install -y python3 python3-pip
 
-RUN pip3 install jupyter
-RUN pip3 install numpy pandas
-RUN pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu117
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113
 
 ENV LIBRARY_PATH /usr/local/cuda/lib64/stubs
 
