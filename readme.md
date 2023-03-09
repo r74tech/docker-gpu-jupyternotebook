@@ -11,7 +11,7 @@ docker-compose up -d --build
 
 ### Get the token
 ```bash
-docker-compose exec jupyter jupyter notebook list
+docker-compose exec hoge jupyter notebook list
 ```
 
 ### Open the notebook
