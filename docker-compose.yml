@@ -1,12 +1,12 @@
 version: '3.7'
 
 services:
-  jupyter:
-    build: ./jupyter
+  hoge:
+    build: ./fuga
     ports:
       - "8888:8888"
     volumes:
-      - ./jupyter/work:/home/jovyan/work
+      - ./fuga/work:/home/jovyan/work
     deploy:
       resources:
         reservations:
