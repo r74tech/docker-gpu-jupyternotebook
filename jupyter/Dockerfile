@@ -1,3 +1,5 @@
+# choose the base image
+# https://hub.docker.com/r/nvidia/cuda/
 FROM nvidia/cuda:11.3.0-cudnn8-devel-ubuntu20.04
 
 RUN apt update
@@ -6,6 +8,9 @@ RUN apt install -y python3 python3-pip
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
+# install pytorch
+# https://pytorch.org/get-started/locally/
+# https://pytorch.org/get-started/previous-versions/
 RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113
 
 ENV LIBRARY_PATH /usr/local/cuda/lib64/stubs
