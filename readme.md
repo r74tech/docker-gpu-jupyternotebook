@@ -6,12 +6,12 @@ This is a Docker image for running Jupyter Notebook with GPU support. It is base
 
 ### Build the image
 ```bash
-docker-compose up -d --build
+docker compose up -d --build
 ```
 
 ### Get the token
 ```bash
-docker-compose exec hoge jupyter notebook list
+docker compose exec hoge jupyter notebook list
 ```
 
 ### Open the notebook
